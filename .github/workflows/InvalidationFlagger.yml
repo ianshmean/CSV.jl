@@ -1,0 +1,17 @@
+name: Evaluate Invalidations
+
+on: [push]
+
+jobs:
+  steps: 
+    - name: Get package name
+      id: pkg
+      run: |
+          REPONAME="${{ github.event.repository.name }}"
+          PACKAGENAME=${REPONAME%.jl}
+          echo "::set-output name=packagename::$PACKAGENAME"
+    - uses: julia-actions/setup-julia@v1
+        with:
+          version: nightly
+    - name: Load package
+      run: `julia -e 'using ${{ steps.pkg.packagename }}'`
