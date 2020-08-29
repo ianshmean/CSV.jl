@@ -20,4 +20,4 @@ jobs:
       - name: Install SnoopCompile tools
         run: julia --project -e 'using Pkg; Pkg.add(["SnoopCompileCore", "SnoopCompile"])'
       - name: Load package
-        run: julia --project -e 'using SnoopCompileCore; invalidations = @snoopr begin using ${{ steps.info.outputs.packagename }} end; display(invalidations)'
+        run: julia --project -e 'using SnoopCompileCore; invalidations = @snoopr begin using ${{ steps.info.outputs.packagename }} end; using SnoopCompileCore; @show length(uinvalidated(invalidations)); display(invalidations)'
