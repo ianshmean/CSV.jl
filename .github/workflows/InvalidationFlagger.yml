@@ -17,5 +17,7 @@ jobs:
         with:
           version: 'nightly'
       - uses: julia-actions/julia-buildpkg@latest
+      - name: Install SnoopCompile tools
+        run: julia --project -e 'using Pkg; Pkg.install(["SnoopCompileCore", "SnoopCompile"])'
       - name: Load package
-        run: julia --project -e 'using ${{ steps.info.outputs.packagename }}'
+        run: julia --project -e 'using SnoopCompileCore; invalidations = @snoopr begin using ${{ steps.info.outputs.packagename }} end; display(invalidations)'
