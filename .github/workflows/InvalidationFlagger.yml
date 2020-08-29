@@ -26,7 +26,7 @@ jobs:
         uses: RubbaBoy/BYOB@v1.1.0
         with:
           NAME: invalidations
-          LABEL: 'Invalidations (julia nightly)'
+          LABEL: 'Invalidations'
           STATUS: ${{ steps.inv.outputs.total }} (${{ steps.inv.outputs.deps }} via deps)
           COLOR: 00EEFF
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
