@@ -14,4 +14,4 @@ jobs:
       with:
         version: 'nightly'
     - name: Load package
-      run: `julia -e 'using ${{ steps.pkg.packagename }}'`
+      run: `julia -e 'using ${{ steps.pkg.outputs.packagename }}'`
