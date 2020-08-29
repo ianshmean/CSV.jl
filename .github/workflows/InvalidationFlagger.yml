@@ -5,7 +5,7 @@ on: [push]
 jobs:
   steps: 
     - name: Get package name
-      id: pkg
+      id: info
       run: |
           REPONAME="${{ github.event.repository.name }}"
           PACKAGENAME=${REPONAME%.jl}
@@ -14,4 +14,4 @@ jobs:
       with:
         version: 'nightly'
     - name: Load package
-      run: `julia -e 'using ${{ steps.pkg.outputs.packagename }}'`
+      run: `julia -e 'using ${{ steps.info.outputs.packagename }}'`
