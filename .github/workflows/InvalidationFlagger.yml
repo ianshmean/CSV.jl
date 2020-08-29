@@ -12,6 +12,6 @@ jobs:
           echo "::set-output name=packagename::$PACKAGENAME"
     - uses: julia-actions/setup-julia@v1
         with:
-          version: nightly
+          version: 'nightly'
     - name: Load package
       run: `julia -e 'using ${{ steps.pkg.packagename }}'`
