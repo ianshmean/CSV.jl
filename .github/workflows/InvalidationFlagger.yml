@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   evaluate-invalidations:
+    runs-on: ubuntu-latest
     steps: 
       - name: Get package name
         id: info
