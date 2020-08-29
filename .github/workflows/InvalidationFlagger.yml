@@ -6,6 +6,7 @@ jobs:
   evaluate-invalidations:
     runs-on: ubuntu-latest
     steps: 
+      - uses: actions/checkout@v1.0.0
       - name: Get package name
         id: info
         run: |
@@ -16,4 +17,4 @@ jobs:
         with:
           version: 'nightly'
       - name: Load package
-        run: julia -e 'using ${{ steps.info.outputs.packagename }}'
+        run: julia --project -e 'using ${{ steps.info.outputs.packagename }}'
