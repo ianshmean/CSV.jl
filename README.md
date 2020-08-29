@@ -21,7 +21,7 @@ The package is registered in the [`General`](https://github.com/JuliaRegistries/
 
 The package is tested against Julia `1.0`, current stable release, and nightly on Linux, OS X, and Windows.
 
-![](https://byob.yarr.is/ianshmean/CSV.jl/invalidations/invalidationflagger)
+![](https://byob.yarr.is/ianshmean/CSV.jl/invalidations)
 
 ## Contributing and Questions
 
