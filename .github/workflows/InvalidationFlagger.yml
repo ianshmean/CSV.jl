@@ -27,7 +27,7 @@ jobs:
         with:
           NAME: invalidations
           LABEL: 'Invalidations (julia nightly)'
-          STATUS: '${{ steps.inv.outputs.total }} (${{ steps.inv.outputs.deps }} via deps)'
+          STATUS: ${{ steps.inv.outputs.total }} (${{ steps.inv.outputs.deps }} via deps)
           COLOR: e3446c
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
